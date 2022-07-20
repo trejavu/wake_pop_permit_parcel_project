@@ -13,7 +13,7 @@ select
     cast(ISSUE_DATE as date) as issue_date,
     cast(PERMIT_STATUS as string) as  permit_status,
     cast(DISTRICT as string) as district,
-    cast({{ get_permit_translation(DISTRICT) }} as integer) as placecode,
+    {{ get_permit_translation('DISTRICT') }} as placecode,
     cast(PERMIT_TYPE as string) as permit_type,
     cast(WORK_CLASS as string) as work_class,
     cast(PROPOSED_USE as string) as proposed_use,

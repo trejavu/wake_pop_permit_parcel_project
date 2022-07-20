@@ -20,21 +20,21 @@ select
 ))) as id,
     cast(OBJECTID as integer) as objectid,
     cast(CITY as string) as city_code,
-    cast(case 
-        when 'CAR' then 10740
-        when 'KNI' then 36080
-        when 'WAK' then 70540
-        when 'RAL' then 55000
-        when 'APE' then 1520
-        when 'GAR' then 25480
-        when 'HOL' then 32260
-        when 'WEN' then 71860
-        when 'FUQ' then 25300
-        when 'MOR' then 44520
-        when 'ZEB' then 76220
-        when 'ROL' then 57640
-        when '' then 99990
-    end as integer) as placecode,
+    case
+        when CITY = 'CAR' then 10740
+        when CITY = 'KNI' then 36080
+        when CITY = 'WAK' then 70540
+        when CITY = 'RAL' then 55000
+        when CITY = 'APE' then 1520
+        when CITY = 'GAR' then 25480
+        when CITY = 'HOL' then 32260
+        when CITY = 'WEN' then 71860
+        when CITY = 'FUQ' then 25300
+        when CITY = 'MOR' then 44520
+        when CITY = 'ZEB' then 76220
+        when CITY = 'ROL' then 57640
+        when CITY IS NULL then 99990
+    end as placecode,
     cast(PLANNING_JURISDICTION as string) as planning_jurisdiction,
     cast(TYPE_USE_DECODE as string) as type_use,
     cast(DESIGN_STYLE_DECODE as string) as design_style,
@@ -45,5 +45,5 @@ select
     cast(TOTUNITS as integer) as total_units,
     cast(record_date as date) as record_date
 
-from parceldata;;
+from parceldata;
 

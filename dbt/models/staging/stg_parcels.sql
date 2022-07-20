@@ -10,7 +10,7 @@ select
     {{ dbt_utils.surrogate_key(['OBJECTID', 'record_date']) }} as id,
     cast(OBJECTID as integer) as objectid,
     cast(CITY as string) as city_code,
-    cast({{ get_parcel_translation(CITY) }} as integer) as placecode,
+    {{ get_parcel_translation('CITY') }} as placecode,
     cast(PLANNING_JURISDICTION as string) as planning_jurisdiction,
     cast(TYPE_USE_DECODE as string) as type_use,
     cast(DESIGN_STYLE_DECODE as string) as design_style,
