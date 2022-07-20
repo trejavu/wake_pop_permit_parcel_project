@@ -10,19 +10,18 @@ models:
   - name: fact_parcels
     description: >
       Aggregated data table for all parcels and associated units for each combination of place, type_use, design_style, and land_class
-    columns:
-      - name: parcel_count
-        description: The sum of the parcels for a given place
-        tests:
-          - not_null:
-            severity: error
-<<<<<<< HEAD
-       - name: unit_count
-        description: The sum of the units for a given place
-        tests:
-          - not_null:
-            severity: error
-    - name: fact_permits
+      columns:
+        - name: parcel_count
+          description: The sum of the parcels for a given place
+          tests:
+            - not_null:
+              severity: error
+        - name: unit_count
+          description: The sum of the units for a given place
+          tests:
+            - not_null:
+              severity: error
+  - name: fact_permits
     description: >
       Aggregated data table for all permits issued for a given place, status, permit_type, and proposed_use
     columns:
@@ -31,19 +30,3 @@ models:
         tests:
           - not_null:
             severity: error
-=======
-       -  name: unit_count
-          description: The sum of the units for a given place
-          tests:
-            - not_null:
-              severity: error
-    - name: fact_permits
-      description: >
-        Aggregated data table for all permits issued for a given place, status, permit_type, and proposed_use
-      columns:
-        - name: permit_count
-          description: The sum of the permits for a given place
-          tests:
-            - not_null:
-              severity: error
->>>>>>> dca4b5835f1d5925e519d637232427e08e126a24
