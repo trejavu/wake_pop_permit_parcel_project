@@ -1,0 +1,13 @@
+version: 2
+
+seeds: 
+  - name: cities_of_interest
+    description: >
+      Contains the GEOID for each of the cities in Wake County, North Carolina
+      that we are interested in mapping in addition to their lat/lon values
+
+  - name: wake_pop_data
+    description: >
+      Contains the US Census population estimate data for each year for the cities of interest
+      starting in 2010
+            

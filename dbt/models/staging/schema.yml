@@ -1,0 +1,100 @@
+
+version: 1
+
+sources:
+    - name: staging
+      #For bigquery:
+      database: de-project-351923
+
+      # For postgres
+
+      schema: wake_cty_data
+
+      # loaded_at_field: record_loaded_at
+      tables:
+        - name: parcels_external_table
+        - name: permits_external_table
+         # freshness:
+           # error_after: {count: 6, period: hour}
+
+models:
+    - name: stg_parcels
+      description: >
+        Parcel data
+      columns:
+          - name: id
+            description: Primary key for this table, generated using the object id and the record date
+            tests:
+                - unique:
+                    severity: warn
+                - not_null:
+                    severity: warn
+          - name: objectid 
+            description: > 
+                identifier of the parcel
+          - name: city_code
+            description: The three-letter code for the city in which the parcel is located
+          - name: placecode
+            description: The placecode identifier associated with the city_code
+          - name: planning_jurisdiction
+            description: The two-letter jurisdiction code for the organization in charge of planning for a given parcel 
+          - name: type_use
+            description: The use type of the parcel
+          - name: design_style
+            description: the design style of the parcel
+          - name: land_class
+            description: Land classification for the parcel
+          - name: building_value
+            description: value of the building only
+          - name: land_value 
+            description: >
+                Value of the land only
+          - name: total_value 
+            description: > 
+              The value of the building and land associated with the parcel combined
+          - name: total_units
+            description: > 
+              The total number of units associated with the parcel
+          - name: record_date
+          - name: record_date
+            description: The date on which the record was ingested into the data warehouse
+    - name: stg_permits
+      description: >
+        Permit data for all permits not voided or withdrawn
+      columns:
+          - name: id
+            description: Primary key for this table, generated using the object id and the record date
+            tests:
+                - unique:
+                    severity: warn
+                - not_null:
+                    severity: warn
+          - name: objectid 
+            description: > 
+                identifier of the permit
+          - name: issue_date
+            description: The date of issuance of the permit
+          - name: district
+            description: The district name responsible for overseeing issuance of the permit
+          - name: placecode
+            description: The placecode identifier associated with the district
+          - name: permit_type
+            description: The type of permit issued
+          - name: work_class
+            description: Classification of the work involved with the permit
+          - name: proposed_use
+            description: Proposed use associated with the permit
+          - name: valuation
+            description: The value of the work to be completed under the permit
+          - name: total_fee_amount
+            description: >
+                Total permit fees
+          - name: contractor 
+            description: > 
+              Name of the contractor associated with the permit
+          - name: longitude
+            description: The longitude value of the location associated with the permit
+          - name: latitude
+            description: The latitude value of the location associated with the permit
+          - name: record_date
+            description: The date on which the record was ingested into the data warehouse

@@ -1,0 +1,21 @@
+version: 1
+
+macros:
+  - name: get_permit_translation
+    description: >
+      This macro receives a district name and returns the standardized place code.
+    arguments:
+      - name: district
+        type: str
+        description: > 
+          district value.
+          Must be one of the accepted values, otherwise the macro will return null
+  - name: get_parcel_translation
+    description: >
+      This macro receives a city name and returns the standardized place code.
+    arguments:
+      - name: city
+        type: str
+        description: > 
+          city code value.
+          Must be one of the accepted values, otherwise the macro will return null

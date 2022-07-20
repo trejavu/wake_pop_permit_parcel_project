@@ -33,7 +33,7 @@ def get_parcel_data(file_name):
     
     parcels_df['record_date'] = datetime.now()
 
-    cols = ['OBJECTID', 'CITY', 'CITY_DECODE', 'PLANNING_JURISDICTION', 'TYPE_USE_DECODE', 'DESIGN_STYLE_DECODE', 'LAND_CLASS_DECODE', 'BLDG_VAL', 'LAND_VAL', 'TOTAL_VALUE_ASSD', 'TOTUNITS']
+    cols = ['OBJECTID', 'CITY', 'CITY_DECODE', 'PLANNING_JURISDICTION', 'TYPE_USE_DECODE', 'DESIGN_STYLE_DECODE', 'LAND_CLASS_DECODE', 'BLDG_VAL', 'LAND_VAL', 'TOTAL_VALUE_ASSD', 'TOTUNITS', 'record_date']
 
     parcels_df[cols].to_parquet(file_name, index=False)
 
@@ -65,8 +65,8 @@ def get_permit_data(file_name):
 
     parcels_df = pd.DataFrame.from_records(data_fields)
     parcels_df['record_date'] = datetime.now()
-    cols = ['OBJECTID', 'ISSUE_DATE', 'PERMIT_STATUS', 'DISTRICT', 'PERMIT_TYPE', 'WORK_CLASS', 'PROPOSED_USE', 'VALUATION', 'TOTAL_FEE_AMOUNT', 'CONTRACTOR', 'X', 'Y']
-    parcels_df['ISSUE_DATE'] = pd.to_datetime(parcels_df['ISSUE_DATE'])
+    cols = ['OBJECTID', 'ISSUE_DATE', 'PERMIT_STATUS', 'DISTRICT', 'PERMIT_TYPE', 'WORK_CLASS', 'PROPOSED_USE', 'VALUATION', 'TOTAL_FEE_AMOUNT', 'CONTRACTOR', 'X', 'Y', 'record_date']
+    parcels_df['ISSUE_DATE'] = pd.to_datetime(parcels_df['ISSUE_DATE']/1000, unit='s')
 
     parcels_df[cols].to_parquet(file_name, index=False)
 
