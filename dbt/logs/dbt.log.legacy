@@ -263,3 +263,14 @@ Update your versions in packages.yml, then run dbt deps
 2022-07-20 22:56:09.603825 (Thread-50): handling status request
 2022-07-20 22:56:09.604216 (Thread-50): 22:56:09  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'f509a939-7394-442f-835d-7ca3ac492fa9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbea8ff8460>]}
 2022-07-20 22:56:09.604662 (Thread-50): sending response (<Response 1589 bytes [200 OK]>) to 10.0.41.177
+2022-07-20 22:56:19.816802 (Thread-51): 22:56:19  Partial parse save file not found. Starting full parse.
+2022-07-20 22:56:19.817128 (Thread-51): 22:56:19  Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f509a939-7394-442f-835d-7ca3ac492fa9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbea8fe8b50>]}
+2022-07-20 22:56:20.313468 (Thread-52): handling status request
+2022-07-20 22:56:20.313908 (Thread-52): 22:56:20  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'f509a939-7394-442f-835d-7ca3ac492fa9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbec842c880>]}
+2022-07-20 22:56:20.314384 (Thread-52): sending response (<Response 1575 bytes [200 OK]>) to 10.0.41.177
+2022-07-20 22:56:20.332867 (Thread-53): handling status request
+2022-07-20 22:56:20.333149 (Thread-53): 22:56:20  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'f509a939-7394-442f-835d-7ca3ac492fa9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbea8781df0>]}
+2022-07-20 22:56:20.333511 (Thread-53): sending response (<Response 1575 bytes [200 OK]>) to 10.0.41.177
+2022-07-20 22:57:25.370820 (Thread-54): handling status request
+2022-07-20 22:57:25.372648 (Thread-54): 22:57:25  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'f509a939-7394-442f-835d-7ca3ac492fa9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbea87816d0>]}
+2022-07-20 22:57:25.373125 (Thread-54): sending response (<Response 1575 bytes [200 OK]>) to 10.0.41.177
