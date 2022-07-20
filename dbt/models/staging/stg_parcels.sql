@@ -21,4 +21,4 @@ select
     cast(TOTUNITS as integer) as total_units,
     cast(record_date as date) as record_date
 
-from parceldata;
+from parceldata

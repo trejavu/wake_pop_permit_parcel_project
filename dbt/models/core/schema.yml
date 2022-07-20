@@ -15,12 +15,12 @@ models:
           description: The sum of the parcels for a given place
           tests:
             - not_null:
-              severity: error
+                severity: error
         - name: unit_count
           description: The sum of the units for a given place
           tests:
             - not_null:
-              severity: error
+                severity: error
   - name: fact_permits
     description: >
       Aggregated data table for all permits issued for a given place, status, permit_type, and proposed_use
@@ -29,4 +29,4 @@ models:
         description: The sum of the permits for a given place
         tests:
           - not_null:
-            severity: error
+              severity: error

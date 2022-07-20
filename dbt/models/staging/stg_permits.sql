@@ -24,4 +24,4 @@ select
     cast(Y as numeric) as latitude,
     cast(record_date as date) as record_date
 
-from permitdata;
+from permitdata
