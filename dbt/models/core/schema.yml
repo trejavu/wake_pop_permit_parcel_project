@@ -22,11 +22,11 @@ models:
             - not_null:
                 severity: error
     - name: fact_permits
-    description: >
-      Aggregated data table for all permits issued for a given place, status, permit_type, and proposed_use
-    columns:
-      - name: permit_count
-        description: The sum of the permits for a given place
-        tests:
+      description: >
+        Aggregated data table for all permits issued for a given place, status, permit_type, and proposed_use
+      columns:
+        - name: permit_count
+          description: The sum of the permits for a given place
+          tests:
             - not_null:
-                severity: error
+              severity: error
