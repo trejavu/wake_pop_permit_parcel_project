@@ -12,6 +12,7 @@ dim_cities as (
 
 select
     permitdata.placecode,
+    permitdata.issue_date,
     permit_status,
     permit_type,
     proposed_use,
@@ -20,4 +21,4 @@ select
     dim_cities.location
 FROM permitdata
 JOIN dim_cities ON permitdata.placecode = dim_cities.placecode
-GROUP BY 1, 2, 3, 4, 5, 7
+GROUP BY 1, 2, 3, 4, 5, 6, 8
