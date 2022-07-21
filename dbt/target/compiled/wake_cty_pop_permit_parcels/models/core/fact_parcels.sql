@@ -1,13 +1,13 @@
-{{ config(materialized='table') }}
+
 
 with parceldata as 
 (
   select *,
-  from {{ ref('stg_parcels') }}
-  where record_date = (SELECT max(record_date) FROM {{ ref('stg_parcels' )}}) 
+  from `de-project-351923`.`dbt_tallison`.`stg_parcels`
+  where record_date = (SELECT max(record_date) FROM `de-project-351923`.`dbt_tallison`.`stg_parcels`) 
 ),
 dim_cities as (
-    select * from {{ ref('dim_cities') }}
+    select * from `de-project-351923`.`dbt_tallison`.`dim_cities`
 )
 
 select

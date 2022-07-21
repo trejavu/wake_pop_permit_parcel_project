@@ -1,13 +1,20 @@
-{{ config(materialized='table') }}
+
+
+  create or replace table `de-project-351923`.`dbt_tallison`.`fact_parcels`
+  
+  
+  OPTIONS()
+  as (
+    
 
 with parceldata as 
 (
   select *,
-  from {{ ref('stg_parcels') }}
-  where record_date = (SELECT max(record_date) FROM {{ ref('stg_parcels' )}}) 
+  from `de-project-351923`.`dbt_tallison`.`stg_parcels`
+  where record_date = (SELECT max(record_date) FROM `de-project-351923`.`dbt_tallison`.`stg_parcels`) 
 ),
 dim_cities as (
-    select * from {{ ref('dim_cities') }}
+    select * from `de-project-351923`.`dbt_tallison`.`dim_cities`
 )
 
 select
@@ -22,3 +29,5 @@ select
 FROM parceldata
 JOIN dim_cities ON parceldata.placecode = dim_cities.placecode
 GROUP BY 1, 2, 3, 4, 5, 8
+  );
+  
